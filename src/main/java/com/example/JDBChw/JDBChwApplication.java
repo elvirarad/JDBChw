@@ -49,10 +49,14 @@ public class JDBChwApplication {
 
         Connection connection = DriverManager.getConnection(url, user, password);
 
+
         CityDAOImpl cityDAO = new CityDAOImpl(connection);
         System.out.println(cityDAO.findById(2));
 
         EmployeeDAOImpl employeeDAO = new EmployeeDAOImpl(connection);
+
+        //employeeDAO.findAll().stream().forEach(System.out::println);
+
         System.out.println(employeeDAO.findById(10));
 
         //EmployeeDAOImpl employeeDAO = new EmployeeDAOImpl(connection);
